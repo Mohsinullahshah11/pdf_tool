@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <nav>
+                <a class="brand" href="/" title="iLovePDF">
+                    <img src="https://www.ilovepdf.com/img/ilovepdf.svg" alt="iLovePDF">
+                </a>
+                <div class="menu">
+                   <ul>
+                    <li class="item"><a href="#">Merged PDF</a></li>
+                    <li class="item"><a href="#">Split PDF</a></li>
+                    <li class="item"><a href="#">Images to PDF</a></li>
+                    <li class="item"><a href="#">Remove Pages</a></li>
+                    <li class="item"><a href="#">PDF Watermark</a></li>
+                    <li class="item"><a href="#">Page Numbers</a></li>
+                   </ul>
+                </div>
+                <i class="fa-solid fa-bars"></i>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="home-title">
+                <h1 class="home-title__title">Merge PDF Files</h1>
+                <h2 class="home-title__subtitle">Combine PDFs in the order you want with the easiest PDF merger available.
+                </h2>
+            </div>
+            <button class="upload-button" id="upload_button">Select PDF File</button>
+           
+            <form action="#" method="post">
+                <input type="file" class="file" name="files" id="file_input">
+                <div class="input-fields">
+                    <input type="number" name="from" id="from" class="form-control" placeholder="Split From page" >
+                    <input type="number" name="to" id="to" class="form-control" placeholder="Split To page" >
+    
+                </div>
+            </form>
+            
+
+        </div>
+    </div>
+
+    <script src="../assets/script/script.js"></script>
+    <script src="../assets/script/splitPDF.js"></script>
+</body>
+
+</html>

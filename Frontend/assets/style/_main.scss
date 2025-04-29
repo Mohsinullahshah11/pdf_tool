@@ -1,6 +1,17 @@
 .main {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
 
+    input.file{
+        display: none;
+    }
+    .input-fields{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
     .home-title {
         padding: 24px;
         position: relative;
@@ -27,6 +38,44 @@
             max-width: 980px;
             margin: auto auto 28px;
             margin-bottom: 12;
+        }
+    }
+
+    .upload-button {
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        min-height: 80px;
+        min-width: 330px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 24px 48px;
+        font-weight: 500;
+        font-size: 24px;
+        background: #e5322d;
+        line-height: 28px;
+        vertical-align: middle;
+        color: #fff !important;
+        text-decoration: none;
+        margin-bottom: 12px;
+        -webkit-transition: background-color .1s linear;
+        -o-transition: background-color .1s linear;
+        transition: background-color .1s linear;
+        border: 0;
+        border-radius: 12px;
+        -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+        -ms-flex-order: 1;
+        order: 1;
+        max-width: 60vw;
+        cursor: pointer;
+        // position: relative;
+
+        &:hover {
+            background-color: #bd060a;
         }
     }
 
