@@ -37,6 +37,7 @@
             //     margin-top: 300px;
             //     // background-color: white;
             // }
+            
             ul {
                 display: flex;
                 gap: 20px;
@@ -68,5 +69,9 @@
                 font-size: 26px;
             }
         }
+
+        .active{ a{
+                color: #aa1111 !important;
+            }}
     }
 }

@@ -18,8 +18,8 @@
                 </a>
                 <div class="menu">
                     <ul>
-                        <li class="item"><a href="./merge_PDF.html">Merged PDF</a></li>
-                        <li class="item active"><a href="#">Split PDF</a></li>
+                        <li class="item active"><a href="./merge_PDF.html">Merged PDF</a></li>
+                        <li class="item"><a href="./split_PDF.html">Split PDF</a></li>
                         <li class="item"><a href="#">Images to PDF</a></li>
                         <li class="item"><a href="#">Remove Pages</a></li>
                         <li class="item"><a href="#">PDF Watermark</a></li>
@@ -32,9 +32,8 @@
 
         <div class="main">
             <div class="home-title">
-                <h1 class="home-title__title">Split PDF File</h1>
-                <h2 class="home-title__subtitle">Split a PDF into individual pages or extract specific pages easily with
-                    our simple PDF splitter.</h2>
+                <h1 class="home-title__title">Merge PDF File</h1>
+                <h2 class="home-title__subtitle">Combine PDFs in the order you want with the easiest PDF merger available.</h2>
             </div>
             <div class="messages">
                
@@ -42,11 +41,7 @@
             <button class="upload-button" id="upload_button">Select PDF File</button>
 
             <form>
-                <input type="file" class="file" name="files" id="fileInput" accept="application/pdf">
-                <div class="input-fields">
-                    <input type="number" name="from" id="from" class="form-control" placeholder="Split From page">
-                    <input type="number" name="to" id="to" class="form-control" placeholder="Split To page">
-                </div>
+                <input type="file" class="file" name="files" id="fileInput" multiple accept="application/pdf">
             </form>
             <button class="upload-button submit" type="button" id="submit">Submit</button>
 
@@ -55,7 +50,7 @@
     </div>
 
     <script src="../assets/script/script.js"></script>
-    <script src="../assets/script/splitPDF.js"></script>
+    <script src="../assets/script/mergePDF.js"></script>
 </body>
 
 </html>

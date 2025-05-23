@@ -60,6 +60,9 @@ body {
     font-size: 26px;
   }
 }
+.wrapper .header nav .active a {
+  color: #aa1111 !important;
+}
 .wrapper .main {
   margin-top: 20px;
   display: flex;
@@ -119,12 +122,20 @@ body {
   border: 0;
   border-radius: 12px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.14);
-  order: 1;
+  -ms-flex-order: 1;
   max-width: 60vw;
   cursor: pointer;
 }
 .wrapper .main .upload-button:hover {
   background-color: #bd060a;
+}
+.wrapper .main .upload-button.submit {
+  min-width: -moz-min-content;
+  min-width: min-content;
+  font-size: 20px;
+  min-height: -moz-min-content;
+  min-height: min-content;
+  padding: 10px 30px;
 }
 .wrapper .main .tools {
   display: flex;

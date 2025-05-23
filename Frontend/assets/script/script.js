@@ -1,4 +1,4 @@
-input = document.getElementById('file_input');
+input = document.getElementById('fileInput');
 uploadButton = document.getElementById('upload_button');
 
 uploadButton.addEventListener('click' ,()=>{
