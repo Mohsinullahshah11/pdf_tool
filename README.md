@@ -28,7 +28,7 @@ A powerful web-based PDF utility that enables you to **merge**, **split**, and *
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/your-username/pdf-tool.git
+   git clone https://github.com/Mohsinullahshah11/pdf_tool
    cd pdf-tool
    ```
 

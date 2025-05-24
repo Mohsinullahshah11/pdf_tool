@@ -114,6 +114,46 @@ def merge_pdf():
         print("Error:", e)
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/images-to-pdf', methods=['POST'])
+def imageToPDF():
+    try:
+
+        files = request.files.getlist('files')
+
+        now = datetime.now()
+        filesPath = []
+        for file in files:
+            file.filename = f'{now}{file.filename}'
+
+            UPLOAD_FOLDER = './uploads'
+            file.save(os.path.join(UPLOAD_FOLDER, f'{file.filename}'))
+            filePath = f'./uploads/{file.filename}'
+            filesPath.append(filePath)
+        
+        splitOperation = pdfOperations(filesPath)
+    
+        filePath =  splitOperation.convert_images_to_pdf()
+
+        # Create in-memory ZIP
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, 'w') as zip_file:
+            zip_file.write(filePath, arcname='images_pdf.pdf')
+
+        zip_buffer.seek(0)
+        filesPath.append(filePath)
+        utlities = Utilities(filesPath)
+        utlities.delete_files()
+
+        return send_file(
+            zip_buffer,
+            mimetype='application/zip',
+            download_name='documents.zip',
+            as_attachment=True
+        )
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": str(e)}), 500
+
 
 
 if __name__ == '__main__':

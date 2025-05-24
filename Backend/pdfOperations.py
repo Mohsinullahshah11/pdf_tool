@@ -1,5 +1,6 @@
 from datetime import datetime
 from pypdf import PdfReader, PdfWriter
+import img2pdf as imgpdf #for images
 
 
 class pdfOperations:
@@ -50,3 +51,13 @@ class pdfOperations:
         merger.write(path)
         merger.close()
         return path
+    
+    def convert_images_to_pdf(self):
+
+        now = datetime.now()
+        path = f'{self.path[0]}{now}'
+        with open(path, "wb") as f:
+            f.write(imgpdf.convert(self.path))
+        
+        return path
+
