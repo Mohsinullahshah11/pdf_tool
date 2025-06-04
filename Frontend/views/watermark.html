@@ -20,9 +20,9 @@
                     <ul>
                         <li class="item"><a href="./merge_PDF.html">Merged PDF</a></li>
                         <li class="item"><a href="./split_PDF.html">Split PDF</a></li>
-                        <li class="item active"><a href="./images_to_PDF.html">Images to PDF</a></li>
+                        <li class="item"><a href="./images_to_PDF.html">Images to PDF</a></li>
                         <li class="item"><a href="./remove_pages.html">Remove Pages</a></li>
-                        <li class="item"><a href="./watermark.html">PDF Watermark</a></li>
+                        <li class="item active"><a href="./watermark.html">PDF Watermark</a></li>
                     </ul>
                 </div>
                 <i class="fa-solid fa-bars"></i>
@@ -31,16 +31,18 @@
 
         <div class="main">
             <div class="home-title">
-                <h1 class="home-title__title">Images to PDF File</h1>
-                <h2 class="home-title__subtitle">Convert your images to a single PDF file quickly and easily.</h2>
+              <h1 class="home-title__title">Add Watermark</h1>
+<h2 class="home-title__subtitle">Easily add text watermarks to your PDF files to protect your content or brand your documents.</h2>
             </div>
             <div class="messages">
                
             </div>
             <button class="upload-button" id="upload_button">Select PDF File</button>
-
             <form>
-<input type="file" class="file" name="files" id="fileInput" multiple accept="image/jpeg, image/png">
+                <input type="file" class="file" name="PDF" id="fileInput" accept="application/pdf">
+                <div class="input-fields">
+                    <input type="text" name="watermark" id="watermark_input" class="form-control" placeholder="Watermark">
+                </div>
             </form>
             <button class="upload-button submit" type="button" id="submit">Submit</button>
 
@@ -49,7 +51,7 @@
     </div>
 
     <script src="../assets/script/script.js"></script>
-    <script src="../assets/script/imagesToPDF.js"></script>
+    <script src="../assets/script/watermark.js"></script>
 </body>
 
 </html>

@@ -20,8 +20,8 @@
                     <ul>
                         <li class="item"><a href="./merge_PDF.html">Merged PDF</a></li>
                         <li class="item"><a href="./split_PDF.html">Split PDF</a></li>
-                        <li class="item active"><a href="./images_to_PDF.html">Images to PDF</a></li>
-                        <li class="item"><a href="./remove_pages.html">Remove Pages</a></li>
+                        <li class="item"><a href="./images_to_PDF.html">Images to PDF</a></li>
+                        <li class="item active"><a href="./remove_pages.html">Remove Pages</a></li>
                         <li class="item"><a href="./watermark.html">PDF Watermark</a></li>
                     </ul>
                 </div>
@@ -31,8 +31,8 @@
 
         <div class="main">
             <div class="home-title">
-                <h1 class="home-title__title">Images to PDF File</h1>
-                <h2 class="home-title__subtitle">Convert your images to a single PDF file quickly and easily.</h2>
+                <h1 class="home-title__title">Remove Pages</h1>
+<h2 class="home-title__subtitle">Easily remove unwanted pages from your PDF with our simple and fast PDF page remover tool.</h2>
             </div>
             <div class="messages">
                
@@ -40,7 +40,10 @@
             <button class="upload-button" id="upload_button">Select PDF File</button>
 
             <form>
-<input type="file" class="file" name="files" id="fileInput" multiple accept="image/jpeg, image/png">
+                <input type="file" class="file" name="files" id="fileInput" accept="application/pdf">
+                <div class="input-fields">
+                    <input type="text" name="pages" id="pages" class="form-control" placeholder="write pages using comma">
+                </div>
             </form>
             <button class="upload-button submit" type="button" id="submit">Submit</button>
 
@@ -49,7 +52,7 @@
     </div>
 
     <script src="../assets/script/script.js"></script>
-    <script src="../assets/script/imagesToPDF.js"></script>
+    <script src="../assets/script/removePages.js"></script>
 </body>
 
 </html>

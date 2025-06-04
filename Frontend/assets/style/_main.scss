@@ -2,16 +2,18 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items:  center;
+    align-items: center;
 
-    input.file{
+    input.file {
         display: none;
     }
-    .input-fields{
+
+    .input-fields {
         display: flex;
         gap: 10px;
         margin-bottom: 10px;
     }
+
     .home-title {
         padding: 24px;
         position: relative;
@@ -77,7 +79,7 @@
             background-color: #bd060a;
         }
 
-        &.submit{
+        &.submit {
             min-width: min-content;
             font-size: 20px;
             min-height: min-content;
@@ -101,12 +103,12 @@
         padding: 0 32px 32px;
 
         .tools__container {
-            display: -ms-flexbox;
             display: flex;
             width: 100%;
-            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             position: relative;
+            justify-content: center;
+            gap: 27px;
 
             .tools__item {
                 background: #fff;

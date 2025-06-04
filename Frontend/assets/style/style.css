@@ -151,6 +151,8 @@ body {
   width: 100%;
   flex-wrap: wrap;
   position: relative;
+  justify-content: center;
+  gap: 27px;
 }
 .wrapper .main .tools .tools__container .tools__item {
   background: #fff;

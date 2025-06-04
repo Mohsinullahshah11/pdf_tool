@@ -1,13 +1,18 @@
 from datetime import datetime
+import io
 from pypdf import PdfReader, PdfWriter
-import img2pdf as imgpdf #for images
+import img2pdf as imgpdf 
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+
 
 
 class pdfOperations:
-    def __init__(self,path,fromPage = None, toPage = None):
+    def __init__(self,path,fromPage = None, toPage = None,_pages = None):
         self.path = path
         self.fromPage = fromPage
         self.toPage = toPage
+        self.pages = _pages
     
     def splitPDF(self):
         resultFilesPath = []
@@ -60,4 +65,52 @@ class pdfOperations:
             f.write(imgpdf.convert(self.path))
         
         return path
+    
+
+    def removePages(self,pages):
+
+        reader = PdfReader(self.path)
+        writer = PdfWriter()
+
+        for page in range(len(reader.pages)):
+            if str(page+1) not in pages:
+                writer.add_page(reader.pages[int(page)])
+
+        now = datetime.now()
+        writerPath1 = f'{self.path}{now}'
+            
+        writer.write(writerPath1)
+
+        return writerPath1
+
+
+    def create_text_watermark(self, text):
+            packet = io.BytesIO()
+            can = canvas.Canvas(packet, pagesize=letter)
+            can.setFont("Helvetica", 40)
+            can.setFillAlpha(0.2) 
+            can.translate(595 / 2, 842 / 2)
+            can.rotate(45)
+            can.drawCentredString(0, 0, text)
+            can.save()
+            packet.seek(0)
+
+            return PdfReader(packet).pages[0]
+
+    def addTextWatermark(self, watermark_text):
+        reader = PdfReader(self.path)
+        writer = PdfWriter()
+
+        watermark_page = self.create_text_watermark(watermark_text)
+        for page in reader.pages:
+            page.merge_page(watermark_page,over=False)
+            writer.add_page(page)
+        now = datetime.now()
+        output_path = f'{self.path}_{now}'
+
+        with open(output_path, 'wb') as out_file:
+            writer.write(out_file)
+
+        return output_path
+
 
